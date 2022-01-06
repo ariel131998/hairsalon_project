@@ -1,0 +1,21 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.menu{
+    // incluimos los colores al navbar
+    @include gradient;
+
+    li {
+        padding: 0 0.7rem;
+    }
+    a{
+        color:$white !important;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    .logo-letras{
+        color:$black;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+}

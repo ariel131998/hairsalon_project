@@ -1,0 +1,28 @@
+//este archivo nos sirve para editar variables por defecto en bootstrap
+$pink-neon: #D9043D;
+$pink-light: #F27979;
+$grey-light: #85A6A2;
+
+//custom white anh grey colors
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+$negro-gris: #181a1b;
+//colores default para bootstrap cambio
+$primary: $pink-neon;
+$secondary: $pink-light;
+
+//sobreescribir el color del boton del acordeon, widget desplegable
+$accordion-icon-color:                    $primary;
+$accordion-icon-active-color:             $secondary;
+
+//nos sirve para traer a bootstrap 
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
