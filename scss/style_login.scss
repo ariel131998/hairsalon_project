@@ -1,6 +1,7 @@
 // @use './custom' as *;
 @use './components/mixins' as *;
 
+
 .gradient-custom{
     @include gradient;
 }

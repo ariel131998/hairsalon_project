@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="images/icono.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <!-- tipografia a utilizar -->
+    
 </head>
 <body class="menu">
     <!-- closs menu -->
@@ -41,7 +43,7 @@
                     <input type="password" id="typePasswordX" class="form-control form-control-lg" />
                     <label class="form-label" for="typePasswordX">Contraseña</label>
                 </div>
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Registrarse</button>
+                <button class="btn btn-outline-light btn-lg px-5 registrar" type="submit">Registrarse</button>
 
                 <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
                     <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>

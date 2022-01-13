@@ -2,6 +2,7 @@
 @use '../components/mixins' as *;
 
 .menu{
+    
     // incluimos los colores al navbar
     @include gradient;
 

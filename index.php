@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="images/icono.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <!-- tipografia a utilizar -->
+    
 </head>
 <body>
     <!-- ////////////////////////////////////////////////////////////////////////////////////////

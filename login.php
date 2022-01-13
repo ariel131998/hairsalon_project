@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/css/style_login.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <!-- tipografia a utilizar -->
+    
 </head>
 <body class= "gradient-custom">
     <!-- closs menu -->
@@ -48,7 +50,7 @@
 
                 <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Olvidaste tu contraseña?</a></p>
 
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Ingresar</button>
+                <button class="btn btn-outline-light btn-lg px-5 ingresar" type="submit">Ingresar</button>
 
                 <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
                     <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
@@ -75,5 +77,6 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous">
     </script>
+    <script src="codigo.js"></script>
 </body>
 </html>
