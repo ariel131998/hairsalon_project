@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <!-- tipografia a utilizar -->
-    
+    <!-- script -->
 </head>
 <body class= "gradient-custom">
     <!-- closs menu -->
@@ -77,6 +77,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous">
     </script>
+    <!-- <script src="db_connection.js"></script> -->
     <script src="codigo.js"></script>
 </body>
 </html>
