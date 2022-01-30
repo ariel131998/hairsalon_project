@@ -1,3 +1,18 @@
+<?php
+session_start();  //continue working with 
+// include_once('checarUsuario.php');
+// $varsession = $_SESSION["s_usuario"];
+// if($varsession === null || $varsession  == ''){
+//     $temp = 'Iniciar Sesion';
+    
+// }
+// function login(){
+//     if($_SESSION["s_usuario"] != null){ 
+//         return $_SESSION["s_usuario"];
+//     } 
+//     if($_SESSION["s_usuario"] == null){ return "Iniciar Sesion";} 
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,10 +47,10 @@
                         <a class="nav-link" href="#home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Contratar</a>
+                        <a class="nav-link" href="#services">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Iniciar Sesion</a>
+                        <a class="nav-link" href="login.php">Contratar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
@@ -45,6 +60,23 @@
                         <i class="fas fa-phone-alt"></i>
                     </span>
                 </button>
+                <!-- Example single danger button -->
+                <!-- Menu para iniciar sesion -->
+                <div class="btn-group">
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fas fa-user" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </div>
             </div>
         </div>
     </nav>

@@ -18,7 +18,7 @@ function login(){
             success:function(data){
                 console.log(data);
                 // console.log(password);
-                if(data == 'null'){
+                if(data.match('null')){
                     Swal.fire({
                         type:'error',
                         title:'Usuario y/o password incorrecta',
@@ -32,6 +32,9 @@ function login(){
                             confirmButtonColor:'#F27979',
                             confirmButtonText:'Ingresar'
                             /*captura el resultado*/
+                        })//se obtuvo un login exitoso
+                        .then((result)=>{
+                            window.location.href = 'index.php'
                         })
                     }
                     

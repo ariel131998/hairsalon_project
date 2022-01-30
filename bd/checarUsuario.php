@@ -1,5 +1,6 @@
 <?php
-// session_start();  //ver despues como se ocupa
+session_start();  //inicia una o se retoma si ya habia alguna., en cada uno donde vaya a trabajarlo debo colocarlo
+
 include_once 'connection.php';
 $nodeConnection = new Connection();
 $connection = $nodeConnection->createConnection();
@@ -17,9 +18,9 @@ $resultado->execute(); #ejecutamos la consulta
 if($resultado->rowCount() >= 1){
 	#FETCH_ASSOC devuelve siguiente fila como array indexado 
     $data = $resultado->fetchAll(PDO::FETCH_ASSOC); #fetchall devuelve array todas las filas del conjunto  
-    $_SESSION["s_usuario"] = $user;
+    $_SESSION["s_usuario"] = $user;//llenamos variable con el usuario encontrado y que mando datos correctamente
 }else{
-    $_SESSION["s_usuario"] = null;
+    $_SESSION["s_usuario"] = null; //lo mandaremos vacio ya que no se encontro ningun usuario match de session. 
     $data=null;
 }
 

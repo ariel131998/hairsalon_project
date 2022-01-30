@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <!-- tipografia a utilizar -->
+    <!-- tipografia a utilizar -->
     <!-- script -->
 </head>
 <body class= "gradient-custom">
