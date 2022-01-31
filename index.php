@@ -50,7 +50,7 @@ session_start();  //continue working with
                         <a class="nav-link" href="#services">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Contratar</a>
+                        <a class="nav-link" href="#">Contratar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
@@ -70,9 +70,9 @@ session_start();  //continue working with
                             
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="login.php">Entrar</a></li>
+                            <li><a class="dropdown-item" href="php-login/signup.php">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="#">Pendiente</a></li>
                         </ul>
                         </li>
                     </ul>

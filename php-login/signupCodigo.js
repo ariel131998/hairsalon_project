@@ -1,14 +1,14 @@
-const iniciar = document.querySelector(".ingresar");
-iniciar.addEventListener("click", login);
-//obtenemos los valores del formulario.
-function login(){
-    // checarConexion();
+const registrar = document.querySelector(".registrar");
+registrar.addEventListener("click", createUser);
+
+function createUser(){
     user = document.getElementById("typeEmailX").value;
     password = document.getElementById("typePasswordX").value;
+
     if(checarVacio()){
         //mandar datos
         $.ajax({
-            url:"bd/checarUsuario.php",
+            url:"bd/registrarUsuario.php",
             type:"POST",
             datatype: "json",
             data:{
@@ -21,14 +21,14 @@ function login(){
                 if(data.match('null')){
                     Swal.fire({
                         type:'error',
-                        title:'Usuario y/o password incorrecta',
+                        title:'Algo salio mal, intente nuevamente',
                     });
                 }
                 else{
                     if(data!="null"){
                         Swal.fire({
                             icon:'success',
-                            title:'¡Conexión exitosa!',
+                            title:'¡Registro exitoso!',
                             confirmButtonColor:'#F27979',
                             confirmButtonText:'Ingresar'
                             /*captura el resultado*/
@@ -44,7 +44,6 @@ function login(){
     }
 }
 
-
 function checarVacio(){
     let f = true;
     if(user.length =="" ||  password ==""){
@@ -59,4 +58,3 @@ function checarVacio(){
     }
     return f;
 }
-

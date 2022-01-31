@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login de Usuarios</title>
 
-    <link rel="shortcut icon" href="images/icono.png">
+    <link rel="shortcut icon" href="../images/icono.png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/fontawesome.css">
     <!-- tipografia a utilizar -->
@@ -70,5 +70,8 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous">
     </script>
+    <script src="signupCodigo.js"></script>
+    <script src="../node_modules\sweetalert2\dist\sweetalert2.all.min.js"></script>
+    <script src="../node_modules\jquery\dist\jquery.min.js"></script>
 </body>
 </html>
