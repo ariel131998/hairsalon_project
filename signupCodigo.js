@@ -33,9 +33,10 @@ function createUser(){
                             confirmButtonText:'Ingresar'
                             /*captura el resultado*/
                         })//se obtuvo un login exitoso
-                        .then((result)=>{
-                            window.location.href = 'perfil.php'
-                        })
+                        
+                            
+                            //window.location.href = 'perfil.php'//checar problema de el post 
+                        
                     }
                     
                 }

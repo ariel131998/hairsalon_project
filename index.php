@@ -71,7 +71,7 @@ session_start();  //continue working with
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="login.php">Entrar</a></li>
-                            <li><a class="dropdown-item" href="php-login/signup.php">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="signup.php">Registrarse</a></li>
                             <li><a class="dropdown-item" href="#">Pendiente</a></li>
                         </ul>
                         </li>
