@@ -1,0 +1,18 @@
+@use '../custom' as *;
+
+.carrusel-section{
+    margin: 1rem;
+    .carousel-item{
+        height: 25rem;
+        img{
+            width: 100%;
+            @include media-breakpoint-up(lg){
+                height: 55rem;
+            }
+        }
+    }
+}
+
+body{
+    background-color: $white;
+}

@@ -3,3 +3,18 @@
 @mixin gradient{
     background: linear-gradient(to right, rgb($primary,0.95),rgb($secondary, 0.95));
 }
+@mixin absoluteBottom{
+    position: absolute;
+    top: 86%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+
+}
+// mover absolutamente al centro
+@mixin absoluteCeter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}

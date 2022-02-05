@@ -4,9 +4,13 @@
 //tambien podemos importar mas componentes como botones, animaciones, mixins y tipografia
 @use 'components/mixins';
 @use 'components/buttons';
-
+@use 'components/typography';
+@use 'components/animations';
 //ademas para cada seccion del proyecto se pueden crear
 //archivos scss para que sea mas ordenado y despues importarlos con
 // el use 'rutadeldocumento sass, crear carpeta sections'
 @use 'sections/navbar';
 @use 'sections/menu_session';
+@use 'sections/intro-section';
+@use 'sections/carrusel-section';
+@use 'sections/services';

@@ -39,3 +39,11 @@
         }
     }
 }
+//estoy haciendo el boton de play video mas chico y centrarlo
+.video-box{
+    @include media-breakpoint-down(sm){
+        height: 60%;
+        width: 60%;
+        margin-left: 5rem;
+    }
+}
