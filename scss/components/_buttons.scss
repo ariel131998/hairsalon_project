@@ -1,6 +1,12 @@
 @use '../custom' as *;
 @use '../components/mixins' as *;
 
+.ocultar{
+    @include media-breakpoint-up(md){
+        display:none;
+    }
+}
+
 .btn-rounded{
     //oculta el boton al pasar a un modo mas pequeno que lg
     @include media-breakpoint-down(lg){

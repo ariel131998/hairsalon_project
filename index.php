@@ -52,12 +52,19 @@ session_start();  //continue working with
                         <a class="nav-link" href="#services">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contratar</a>
+                        <a class="nav-link" href="#referencias-clientes">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#footer">Contacto</a>
+                    </li>
+                    <li class="nav-item ocultar">
+                        <a class="nav-link" href="login.php">Entrar</a>
+                    </li>
+                    <li class="nav-item ocultar">
+                        <a class="nav-link" href="signup.php">Registrarse</a>
+                    </li>
                 </ul>
-                <button type="button" class="rounded-pill btn-rounded">+52 2211761989
+                <button type="button" class="rounded-pill btn-rounded" onclick="location.href='https://wa.me/522228231832';">+52 2211761989
                     <span>
                         <i class="fas fa-phone-alt"></i>
                     </span>
@@ -101,7 +108,7 @@ session_start();  //continue working with
                             nuestros servicios
                         </span>
                     </h1>
-                    <button type="button" class="rounded-pill btn-rounded">Agendar
+                    <button type="button" class="rounded-pill btn-rounded" onclick="location.href='login.php';">Agendar
                         <span>
                             <i class="fas fa-arrow-right"></i>
                         </span>
@@ -225,7 +232,7 @@ session_start();  //continue working with
                             este igual ya iria incluido, posteriormente se puede elegir entre un catalogo o el cliente puede decidir cual 
                             es el que le gustaria.
                         </p>
-                        <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
+                        <button type="button" class="rounded-pill btn-rounded border-primary">$300
                             <span>
                                 <i class="fas fa-dollar-sign"></i>
                             </span>
@@ -244,7 +251,7 @@ session_start();  //continue working with
 
 
             <!-- ////////////////////////////////////////////////////////////////////////////////////////
-                               START SECTION 5 - Carrusel de imagenes  
+                               START SECTION 4 - Carrusel de imagenes  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
    <section id="referencias-clientes" class="carrusel-section">
        <div class="container">
@@ -288,8 +295,100 @@ session_start();  //continue working with
             </div>
        </div>
    </section>
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 5 - Cotacto page 
+/////////////////////////////////////////////////////////////////////////////////////////////-->
+    <section id="education "class="education pb-5">
+            <div class="container">
+                <div class="row text-center">
+                    <h1 class="display-3 fw-bold education--title">Contacto</h1>
+                    <hr style="width: 100px; height: 3px;" class="mx-auto">
+                    <p class="lead pt-1 education__name">Maria Eugenia Zitle Chavez </p>
+                    <p class="lead pt-1 education__name">Carrera en Academia de Belleza</p>
+                    
+                </div>
+            </div>
+    </section>
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 6 - contact places
+/////////////////////////////////////////////////////////////////////////////////////////////-->
+        <!-- EMPIEZA LA SECCION DE CONTACO FINAL -->
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- contacto celular -->
+                    <div class="col-md-4 col-lg-4 content-box pt-1 d-md-block d-lg-flex d-flex">
+                        <div class="content-box__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call"  viewBox="0 0 24 24" stroke-width="1"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                                <path d="M15 7a2 2 0 0 1 2 2" />
+                                <path d="M15 3a6 6 0 0 1 6 6" />
+                            </svg>
+                        </div>
+                        <div class="content-box__info">
+                            <a href="https://wa.me/522211761989" class="content-box__info--title">+52 2211761989</a>
+                            <p class="content-box__info--subtitle">Martes-Sabado de 9am-7pm</p>
+                        </div>
+                    </div>
+                    <!-- contactot email -->
+                    <div class="col-md-4 col-lg-4 content-box pt-1 d-md-block d-lg-flex d-flex">
+                        <div class="content-box__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened"  viewBox="0 0 24 24" stroke-width="1"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <polyline points="3 9 12 15 21 9 12 3 3 9" />
+                                <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                                <line x1="3" y1="19" x2="9" y2="13" />
+                                <line x1="15" y1="13" x2="21" y2="19" />
+                            </svg>
+                        </div>
+                        <div class="content-box__info">
+                            <a href="mailto:ariel.ortega.zitle98@gmail.com" class="content-box__info--title">beautySalonToYourHome@gmail.com</a>
+                            <p class="content-box__info--subtitle">beautySalonPersonalCotization@gmail.com</p>
+                        </div>
+                    </div>
+                    <!-- conttacto para localizacion -->
+                    <div class="col-md-4 col-lg-4 content-box pt-1 d-md-block d-lg-flex d-flex">
+                        <div class="content-box__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2"  viewBox="0 0 24 24" stroke-width="1"  fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <line x1="18" y1="6" x2="18" y2="6.01" />
+                                <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+                                <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+                                <line x1="9" y1="4" x2="9" y2="17" />
+                                <line x1="15" y1="15" x2="15" y2="20" />
+                            </svg>
+                        </div>
+                        <div class="content-box__info">
+                            <a href="https://www.google.com/maps/place/Puebla,+Pue./@19.0399944,-98.3330513,11z/data=!3m1!4b1!4m5!3m4!1s0x85cfc0bd5ebc7a3b:0x48a6461de494ad95!8m2!3d19.0414398!4d-98.2062727" class="content-box__info--title">Puebla</a>
+                            <p class="content-box__info--subtitle">México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
+            <!-- Empieza los links para las redes sociales -->
+            <div class="footer-sm">
+                <div class="container">
+                    <div class="row py-4 text-center">
+                        <div class="col-lg-5 col-md-6 mb-4 text-white">
+                            Contactanos a traves de nuestras redes sociales
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <a href="https://www.facebook.com/ariel.ortega.54584">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/AOZ_ariel13?t=Ae2Uo0TzyQMNOxzVok1HNw&s=09">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ariel13ortega/?hl=es">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
 
