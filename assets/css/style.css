@@ -11118,7 +11118,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .ocultar {
     display: none;
   }

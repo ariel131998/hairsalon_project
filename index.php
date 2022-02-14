@@ -172,7 +172,7 @@ session_start();  //continue working with
         </div>
         <!-- EMPIEZAN EL CONTENIDO DE LAS HABILIDADES -->
         <div class="container">
-            <!-- empieza el maquetado de desarrollo web -->
+            <!-- empieza el maquetado de corte de cabello -->
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
                     <div class="services__content">
@@ -196,7 +196,7 @@ session_start();  //continue working with
                     </div>
                 </div>
             </div>
-            <!-- empieza el maquetado de desarrollo de aplicaciones moviles-->
+            <!-- empieza el maquetado de coloracion-->
             <div class="row">
                 <div
                     class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start order-2 order-sm-2 order-xs-2">
@@ -221,7 +221,7 @@ session_start();  //continue working with
                     </div>
                 </div>
             </div>
-            <!-- empieza el maquetado de ciencia de datos -->
+            <!-- empieza el maquetado de peinado -->
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
                     <div class="services__content">
@@ -257,32 +257,55 @@ session_start();  //continue working with
        <div class="container">
             <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
                 </div>
                 <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="images/carrusel/uno.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
+                    <div class="carousel-item active">
+                        <img src="images/carrusel/uno.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Abigail Perez</h5>
+                            <p>Muy buena experiencia, super buen servicio y todo a muy buen precio.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carrusel/dos.png" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h5>Paola castillo</h5>
+                        <p>Realice una coloracion y el resultado fue mejor del esperado.</p>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                <img src="images/carrusel/dos.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
+                    <img src="images/carrusel/tres.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Angelica Aguilar</h5>
+                        <p>Solicite 2 cortes y una coloracion, la estilista llego a tiempo y todo super profesional</p>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                <img src="images/carrusel/tres.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <img src="images/carrusel/cuatro.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Poli Mars</h5>
+                        <p>Un peinado perfecto para mi graduacion de universidad</p>
+                    </div>
                 </div>
+                <div class="carousel-item">
+                    <img src="images/carrusel/cinco.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Yara Mano</h5>
+                        <p>Un peinado perfecto para mi graduacion de universidad</p>
+                    </div>
                 </div>
+                <div class="carousel-item">
+                    <img src="images/carrusel/seis.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Yun Lara</h5>
+                        <p>Esperando para mi siguiente corte, todo perfecto</p>
+                    </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
