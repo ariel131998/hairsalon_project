@@ -43,6 +43,30 @@
                     <input type="password" id="typePasswordX" class="form-control form-control-lg" />
                     <label class="form-label" for="typePasswordX">Contraseña</label>
                 </div>
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="name" class="form-control form-control-lg" />
+                    <label class="form-label" for="name">Nombre</label>
+                </div>
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="apellido" class="form-control form-control-lg" />
+                    <label class="form-label" for="apellido">Apellido Paterno</label>
+                </div>
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="apellidoM" class="form-control form-control-lg" />
+                    <label class="form-label" for="apellidoM">Apellido Materno</label>
+                </div>
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="direccion" class="form-control form-control-lg" />
+                    <label class="form-label" for="direccion">Direccion</label>
+                </div>
+                <div class="form-outline form-white mb-4">
+                    <input type="text" id="usuario" class="form-control form-control-lg" />
+                    <label class="form-label" for="usuario">Nombre de usuario</label>
+                </div>
+                <div class="form-outline form-white mb-4">
+                    <input type="tel" id="celular" class="form-control form-control-lg" />
+                    <label class="form-label" for="celular">Celular</label>
+                </div>
                 <button class="btn btn-outline-light btn-lg px-5 registrar" type="submit">Registrarse</button>
 
                 <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
