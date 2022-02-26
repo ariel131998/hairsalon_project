@@ -24,16 +24,16 @@
         &--title{
             color: $white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: .7rem;
             @include media-breakpoint-up(lg){
                 font-size: 1.3rem;
             }
         }
         &--subtitle{
-            font-size: 0.8rem;
+            font-size: 0.5rem;
             color: $gray-600;
             text-decoration: none;
-            @include media-breakpoint-up(md){
+            @include media-breakpoint-up(lg){
                 font-size: 1rem;
             }
         }

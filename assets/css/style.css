@@ -11385,7 +11385,7 @@ body {
 .content-box__info--title {
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 @media (min-width: 992px) {
   .content-box__info--title {
@@ -11393,11 +11393,11 @@ body {
   }
 }
 .content-box__info--subtitle {
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   color: #6c757d;
   text-decoration: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .content-box__info--subtitle {
     font-size: 1rem;
   }

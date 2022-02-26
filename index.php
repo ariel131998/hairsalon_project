@@ -366,8 +366,8 @@ session_start();  //continue working with
                             </svg>
                         </div>
                         <div class="content-box__info">
-                            <a href="mailto:ariel.ortega.zitle98@gmail.com" class="content-box__info--title">beautySalonToYourHome@gmail.com</a>
-                            <p class="content-box__info--subtitle">beautySalonPersonalCotization@gmail.com</p>
+                            <a href="mailto:ariel.ortega.zitle98@gmail.com" class="content-box__info--title">beautySalonTYH@gmail.com</a>
+                            <p class="content-box__info--subtitle">beautySalonPersonalC@gmail.com</p>
                         </div>
                     </div>
                     <!-- conttacto para localizacion -->
