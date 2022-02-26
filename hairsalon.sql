@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-01-2022 a las 01:09:12
+-- Tiempo de generación: 26-02-2022 a las 21:46:15
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -30,17 +30,24 @@ SET time_zone = "+00:00";
 CREATE TABLE `usuarios_login` (
   `usuario` varchar(30) NOT NULL,
   `contrasena` varchar(30) NOT NULL,
-  `metodo` varchar(40) DEFAULT NULL
+  `metodo` varchar(40) DEFAULT NULL,
+  `Nombre` varchar(30) NOT NULL,
+  `Apellido` varchar(30) DEFAULT NULL,
+  `ApellidoM` varchar(30) NOT NULL,
+  `direccion` varchar(100) DEFAULT NULL,
+  `correo` varchar(30) NOT NULL,
+  `celular` varchar(12) NOT NULL,
+  `fecha_registro` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios_login`
 --
 
-INSERT INTO `usuarios_login` (`usuario`, `contrasena`, `metodo`) VALUES
-('ariel', '689150106b3524a078a0ef39190456', 'sha1'),
-('ortega', 'f6f9ada5616798aa9e0ba80c7f1857', 'md5'),
-('zitle', 'ariel1304', 'texto');
+INSERT INTO `usuarios_login` (`usuario`, `contrasena`, `metodo`, `Nombre`, `Apellido`, `ApellidoM`, `direccion`, `correo`, `celular`, `fecha_registro`) VALUES
+('ariel', '689150106b3524a078a0ef39190456', 'sha1', '', NULL, '', NULL, '', '', '2022-02-25'),
+('ortega', 'f6f9ada5616798aa9e0ba80c7f1857', 'md5', '', NULL, '', NULL, '', '', '2022-02-25'),
+('zitle', 'ariel1304', 'texto', '', NULL, '', NULL, '', '', '2022-02-25');
 
 --
 -- Índices para tablas volcadas
@@ -50,7 +57,8 @@ INSERT INTO `usuarios_login` (`usuario`, `contrasena`, `metodo`) VALUES
 -- Indices de la tabla `usuarios_login`
 --
 ALTER TABLE `usuarios_login`
-  ADD PRIMARY KEY (`usuario`);
+  ADD PRIMARY KEY (`usuario`),
+  ADD UNIQUE KEY `usuario` (`usuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
