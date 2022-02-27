@@ -8,11 +8,16 @@ $connection = $nodeConnection->createConnection();
 
 //recepción de datos enviados mediante POST desde ajax
 $user = (isset($_POST['user'])) ? $_POST['user'] : ''; //isset determina que variable no sea nula
+$email = (isset($_POST['email'])) ? $_POST['email'] : '';
 $password = (isset($_POST['password'])) ? $_POST['password'] : '';
-$metodo = 'texto';
+$Name = (isset($_POST['Name'])) ? $_POST['Name'] : '';
+$Last = (isset($_POST['Last'])) ? $_POST['Last'] : '';
+$LastM = (isset($_POST['LastM'])) ? $_POST['LastM'] : '';
+$Direction = (isset($_POST['Direction'])) ? $_POST['Direction'] : '';
+$celphone = (isset($_POST['celphone'])) ? $_POST['celphone'] : '';
 //registrar en bd
 //$consulta = "SELECT * FROM usuarios_login WHERE usuario='$user' AND contrasena='$password' ";
-$consulta = "INSERT INTO usuarios_login (usuario, contrasena,metodo) VALUES ('$user', '$password', '$metodo')";
+$consulta = "INSERT INTO usuarios_login (usuario, contrasena, Nombre, Apellido, ApellidoM, direccion, correo, celular) VALUES ('$user', '$password', '$Name', '$Last', '$LastM', '$Direction', '$email', '$celphone')";
 $resultado = $connection->prepare($consulta);
 $resultado->execute(); #ejecutamos la consulta
 // write_to_console($resultado);

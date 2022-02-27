@@ -2,8 +2,15 @@ const registrar = document.querySelector(".registrar");
 registrar.addEventListener("click", createUser);
 
 function createUser(){
-    user = document.getElementById("typeEmailX").value;
+    user = document.getElementById("typeUser").value;
+    email = document.getElementById("typeEmailX").value;
     password = document.getElementById("typePasswordX").value;
+    Name= document.getElementById("typeName").value;
+    Last= document.getElementById("typeLast").value;
+    LastM= document.getElementById("typeLastM").value;
+    Direction= document.getElementById("typeDirection").value;
+    celphone= document.getElementById("typeCel").value;
+
 
     if(checarVacio()){
         //mandar datos
@@ -13,7 +20,13 @@ function createUser(){
             datatype: "json",
             data:{
                 user:user,
-                password: password
+                email: email,
+                password: password,
+                Name: Name,
+                Last: Last,
+                LastM: LastM,
+                Direction: Direction,
+                celphone: celphone
             },
             success:function(data){
                 console.log(data);
@@ -47,7 +60,7 @@ function createUser(){
 
 function checarVacio(){
     let f = true;
-    if(user.length =="" ||  password ==""){
+    if(user.length =="" ||  password =="" ||  Name =="" ||  Last =="" ||  LastM =="" ||  Direction ==""||  celphone ==""){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',

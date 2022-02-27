@@ -35,6 +35,11 @@
                 <p class="text-white-50 mb-5">Por favor ingresa tu email y contraseña</p>
 
                 <div class="form-outline form-white mb-4">
+                    <input type="text" id="typeUser" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeUser">Nombre de usuario</label>
+                </div>
+
+                <div class="form-outline form-white mb-4">
                     <input type="email" id="typeEmailX" class="form-control form-control-lg" />
                     <label class="form-label" for="typeEmailX">Email</label>
                 </div>
@@ -44,28 +49,25 @@
                     <label class="form-label" for="typePasswordX">Contraseña</label>
                 </div>
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="name" class="form-control form-control-lg" />
-                    <label class="form-label" for="name">Nombre</label>
+                    <input type="text" id="typeName" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeName">Nombre</label>
                 </div>
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="apellido" class="form-control form-control-lg" />
-                    <label class="form-label" for="apellido">Apellido Paterno</label>
+                    <input type="text" id="typeLast" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeLast">Apellido Paterno</label>
                 </div>
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="apellidoM" class="form-control form-control-lg" />
-                    <label class="form-label" for="apellidoM">Apellido Materno</label>
+                    <input type="text" id="typeLastM" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeLastM">Apellido Materno</label>
                 </div>
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="direccion" class="form-control form-control-lg" />
-                    <label class="form-label" for="direccion">Direccion</label>
+                    <input type="text" id="typeDirection" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeDirection">Direccion</label>
                 </div>
+                
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="usuario" class="form-control form-control-lg" />
-                    <label class="form-label" for="usuario">Nombre de usuario</label>
-                </div>
-                <div class="form-outline form-white mb-4">
-                    <input type="tel" id="celular" class="form-control form-control-lg" />
-                    <label class="form-label" for="celular">Celular</label>
+                    <input type="tel" id="typeCel" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeCel">Celular</label>
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5 registrar" type="submit">Registrarse</button>
 

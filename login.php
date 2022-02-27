@@ -62,7 +62,7 @@
                 </div>
 
                 <div>
-                <p class="mb-0">No tienes una cuenta? <a href="php-login/signup.php" class="text-white-50 fw-bold">Registrarte</a></p>
+                <p class="mb-0">No tienes una cuenta? <a href="./signup.php" class="text-white-50 fw-bold">Registrarte</a></p>
                 </div>
 
             </div>
