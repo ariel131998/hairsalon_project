@@ -11268,7 +11268,7 @@ html {
   background: linear-gradient(to right, rgba(217, 4, 61, 0.95), rgba(242, 121, 121, 0.95));
 }
 
-.intro-section {
+.intro-section, .prueba {
   background: linear-gradient(to right, rgba(217, 4, 61, 0.95), rgba(242, 121, 121, 0.95));
   padding: 10rem 0 0 0;
 }

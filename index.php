@@ -1,7 +1,7 @@
 <?php
 session_start();  //continue working with 
 // include_once('checarUsuario.php');
-// $varsession = $_SESSION["s_usuario"];
+//  $varsession = "";
 // if($varsession === null || $varsession  == ''){
 //     $temp = 'Iniciar Sesion';
     
@@ -81,7 +81,7 @@ session_start();  //continue working with
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="login.php">Entrar</a></li>
                             <li><a class="dropdown-item" href="signup.php">Registrarse</a></li>
-                            <li><a class="dropdown-item" href="#">Pendiente</a></li>
+                            
                         </ul>
                         </li>
                     </ul>
