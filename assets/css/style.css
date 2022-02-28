@@ -11268,7 +11268,7 @@ html {
   background: linear-gradient(to right, rgba(217, 4, 61, 0.95), rgba(242, 121, 121, 0.95));
 }
 
-.intro-section, .prueba {
+.intro-section {
   background: linear-gradient(to right, rgba(217, 4, 61, 0.95), rgba(242, 121, 121, 0.95));
   padding: 10rem 0 0 0;
 }
@@ -11417,6 +11417,13 @@ body {
   .footer-sm a i {
     font-size: 1.7rem;
   }
+}
+
+.prueba {
+  color: white;
+  background: linear-gradient(to right, rgba(217, 4, 61, 0.95), rgba(242, 121, 121, 0.95));
+  padding: 7rem 0 0 0;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

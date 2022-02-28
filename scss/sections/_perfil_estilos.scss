@@ -1,0 +1,12 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+ .prueba{
+    color: white;
+    @include gradient;
+    padding: 7rem 0 0 0;
+    text-align: center;
+    
+}
+
+
+
