@@ -121,7 +121,7 @@ if($varsession === null || $varsession  == ''){
                     <div id="demo-booking-multiple"></div>
                     <label>
                         Selecciona el dia y horario
-                        <input id="demo-booking-multiple" mbsc-input data-input-style="outline" data-label-style="stacked" placeholder="Please select..." />
+                        <input id="demo-booking-multiple" mbsc-input data-input-style="outline" data-label-style="stacked" placeholder="Seleccione fecha..." />
                     </label>
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5 reservar" type="submit">Reservar</button>

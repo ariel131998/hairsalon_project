@@ -1,32 +1,47 @@
+//seccion obtener datos de tabla de servicios.
+function mostrarServicios(){
+    //modificar
+    $.ajax({
+        url:"bd/checarUsuario.php",
+        type:"POST",
+        datatype: "json",
+        data:{
+            user:user,
+            password: password
+        },
+        success:function(data){
+            console.log(data);
+            // console.log(password);
+            if(data.match('null')){
+                Swal.fire({
+                    type:'error',
+                    title:'Usuario y/o password incorrecta',
+                });
+            }
+            else{
+                if(data!="null"){
+                    Swal.fire({
+                        icon:'success',
+                        title:'¡Conexión exitosa!',
+                        confirmButtonColor:'#F27979',
+                        confirmButtonText:'Ingresar'
+                        /*captura el resultado*/
+                    })//se obtuvo un login exitoso
+                    .then((result)=>{
+                        window.location.href = 'perfil.php'
+                    })
+                }
+                
+            }
+        }
+    })
+}
+
+//seccion calendario
 mobiscroll.setOptions({
     locale: mobiscroll.localeEs,
     theme: 'ios',
     themeVariant: 'light'
-});
-
-mobiscroll.datepicker('#demo-inline', {
-    controls: ['calendar'],
-    display: 'inline'
-});
-
-mobiscroll.datepicker('#demo-anchored', {
-    controls: ['calendar'],
-    display: 'anchored'
-});
-
-mobiscroll.datepicker('#demo-top', {
-    controls: ['calendar'],
-    display: 'top'
-});
-
-mobiscroll.datepicker('#demo-bottom', {
-    controls: ['calendar'],
-    display: 'bottom'
-});
-
-mobiscroll.datepicker('#demo-center', {
-    controls: ['calendar'],
-    display: 'center'
 });
 
 mobiscroll.datepicker('#demo-booking-multiple', {
@@ -54,3 +69,5 @@ mobiscroll.datepicker('#demo-booking-multiple', {
         end: '2022-02-28T20:00'
     }]
 });
+
+
