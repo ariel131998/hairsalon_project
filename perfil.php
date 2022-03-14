@@ -114,9 +114,9 @@ if($varsession === null || $varsession  == ''){
                         <option>Peinado Dama</option> -->
                     </select>
                 </div>
-                <div class="form-outline form-white mb-4">
-                <p class="text-white-70 mb-1">Colocar costo con javascript</p>
-                <p class="text-white-70 mb-1">Colocar tiempo</p>
+                <div class="form-outline form-white mb-4 costTime">
+                    <h3 id ="cost"></h3>
+                    <h3 id ="time"></h3>
                 </div>
                     <!-- <div id="demo-inline"></div> -->
                     <div id="demo-booking-multiple"></div>

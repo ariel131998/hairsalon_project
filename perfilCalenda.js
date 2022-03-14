@@ -1,8 +1,8 @@
 //seccion obtener datos de tabla de servicios.
-
+var servicios = document.getElementById('servicio');
 
 function mostrarServicios(){
-    var servicios = document.getElementById('servicio');
+    
     //modificar
     if(true){
         $.ajax({
@@ -42,7 +42,7 @@ function mostrarServicios(){
                             //console.log(typeof(jsonObj));
                             //console.log(jsonObj[0].servicio);//funciono
                             serviciosJSON.forEach(element => {
-                                console.log(element.servicio);
+                                //console.log(element.servicio);
                                 //servicios.document.write()
                                 //var ventana = window.open('', 'PRINT', 'height=400,width=600');
                                 const option = document.createElement('option');
@@ -61,6 +61,43 @@ function mostrarServicios(){
     }
 }
 mostrarServicios();
+
+/*
+////////////////////////////////////////
+Colocar tiempo y costo dependiendo de lo elegido de la BD
+///////////////////////////////////////
+*/
+function showCost(){
+    //const parrafo = document.createElement('p');
+    //parrafo.textContent = "30";
+    //parrafo.className = "text-white-70 mb-1 cost";
+    var temp  = document.getElementById('cost');
+    //cambiar por consulta en bd
+    temp.innerHTML = "$30";
+    //temp.appendChild(parrafo);
+    //cost.innerHTML = "hola";
+}
+
+function showTime(){
+    var temp  = document.getElementById('time');
+    //cambiar por consulta en bd
+    temp.innerHTML = "1 hora";
+}
+const opcionCambiada = ()=>{
+    console.log("cambio");
+    console.log(servicios.value);
+    showCost();
+    showTime();
+}
+
+servicios.addEventListener("change", opcionCambiada);
+
+
+
+
+
+
+
 //seccion calendario
 // mobiscroll.setOptions({
 //     locale: mobiscroll.localeEs,
