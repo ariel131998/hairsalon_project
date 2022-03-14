@@ -27,8 +27,9 @@ if($varsession === null || $varsession  == ''){
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" />
-    <script src="js/mobiscroll.javascript.min.js"></script>
+    <!-- <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" /> -->
+    <!-- <script src="js/mobiscroll.javascript.min.js"></script> -->
+    <script src="node_modules\jquery\dist\jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="assets/css/fontawesome.css"> -->
     <!-- tipografia a utilizar -->
     <!-- tipografia a utilizar -->
@@ -106,11 +107,11 @@ if($varsession === null || $varsession  == ''){
                 
                 <div class="form-group form-white mb-4">
                     <select class="form-control servicioOption" id="servicio">
-                        <option>Corte de cabello Hombre</option>
+                        <!-- <option>Corte de cabello Hombre</option>
                         <option>Corte de cabello Dama</option>
                         <option>Coloracion de cabello</option>
                         <option>Corte de barba</option>
-                        <option>Peinado Dama</option>
+                        <option>Peinado Dama</option> -->
                     </select>
                 </div>
                 <div class="form-outline form-white mb-4">
@@ -142,6 +143,7 @@ if($varsession === null || $varsession  == ''){
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                SCRIPTS SECTION 
 /////////////////////////////////////////////////////////////////////////////////////////////-->
+    
     <script src="perfilCalenda.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -149,6 +151,7 @@ if($varsession === null || $varsession  == ''){
     </script>
     <!-- <script src="db_connection.js"></script> -->
     <script src="node_modules\sweetalert2\dist\sweetalert2.all.min.js"></script>
-    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    
+    
 </body>
 </html>
