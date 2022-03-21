@@ -67,26 +67,35 @@ mostrarServicios();
 Colocar tiempo y costo dependiendo de lo elegido de la BD
 ///////////////////////////////////////
 */
-function showCost(){
-    //const parrafo = document.createElement('p');
-    //parrafo.textContent = "30";
-    //parrafo.className = "text-white-70 mb-1 cost";
+function showCost($servicioSelec){
+    
     var temp  = document.getElementById('cost');
+    var temp2  = document.getElementById('time');
     //cambiar por consulta en bd
-    temp.innerHTML = "$30";
-    //temp.appendChild(parrafo);
-    //cost.innerHTML = "hola";
+    //var servicioTemp = $servicioSelec;
+    console.log($servicioSelec);
+    //consulta bd por precio
+    $.ajax({
+        url:"bd/obtenerPrecio.php",
+        data: {servicio: $servicioSelec},
+        type:"POST",
+        datatype: "json",
+        success: function(json){
+            var dataJson = JSON.parse(json);
+            temp.innerHTML = "$"+dataJson[0]['costo'] ;
+            temp2.innerHTML = dataJson[0]['tiempo'] + " horas";
+        },
+        error : function(jqXHR, status, error) {
+            alert('Disculpe, existió un problema');
+        },
+    });
 }
 
-function showTime(){
-    var temp  = document.getElementById('time');
-    //cambiar por consulta en bd
-    temp.innerHTML = "1 hora";
-}
 const opcionCambiada = ()=>{
     console.log("cambio");
-    console.log(servicios.value);
-    showCost();
+    //console.log(servicios.value);
+    var $servicioSelec = servicios.value;
+    showCost($servicioSelec);
     showTime();
 }
 
