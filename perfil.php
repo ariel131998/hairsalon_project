@@ -7,12 +7,6 @@ if($varsession === null || $varsession  == ''){
     die();
     
 }
-// function login(){
-//     if($_SESSION["s_usuario"] != null){ 
-//         return $_SESSION["s_usuario"];
-//     } 
-//     if($_SESSION["s_usuario"] == null){ return "Iniciar Sesion";} 
-// }
 ?>
 
 <html lang="en">
@@ -27,10 +21,12 @@ if($varsession === null || $varsession  == ''){
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <!-- <link href="css/mobiscroll.javascript.min.css" rel="stylesheet" /> -->
+    <!-- Scripts calendario -->
     <!-- <script src="js/mobiscroll.javascript.min.js"></script> -->
     <script src="node_modules\jquery\dist\jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="assets/css/fontawesome.css"> -->
+    <link rel="stylesheet" href="css/simplepicker.css">
+    <script src="css/simplepicker.js"></script>
     <!-- tipografia a utilizar -->
     <!-- tipografia a utilizar -->
     <!-- script -->
@@ -96,7 +92,7 @@ if($varsession === null || $varsession  == ''){
 /////////////////////////////////////////////////////////////////////////////////////////////-->    
     <section class="vh-100">
     <div class="container py-5 h-100 ">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="row d-flex justify-content-center align-items-center">
         <div class="col-10 col-md-8 col-lg-6 col-xl-5">
             <div class="card bg-dark text-white" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
@@ -122,7 +118,7 @@ if($varsession === null || $varsession  == ''){
                     <div id="demo-booking-multiple"></div>
                     <label>
                         Selecciona el dia y horario
-                        <input id="demo-booking-multiple" mbsc-input data-input-style="outline" data-label-style="stacked" placeholder="Seleccione fecha..." />
+                        <button  class="calenda" id="calenda"/>Elegir Fecha </button>
                     </label>
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5 reservar" type="submit">Reservar</button>

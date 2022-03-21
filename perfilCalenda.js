@@ -1,3 +1,9 @@
+//variables globales para mandar a guardar la cita
+var servicio2; //servicio
+//var usuario; //recuperar de php.
+var fecha;
+var costo;
+var tiempo;
 //seccion obtener datos de tabla de servicios.
 var servicios = document.getElementById('servicio');
 
@@ -84,6 +90,10 @@ function showCost($servicioSelec){
             var dataJson = JSON.parse(json);
             temp.innerHTML = "$"+dataJson[0]['costo'] ;
             temp2.innerHTML = dataJson[0]['tiempo'] + " horas";
+
+            //pruebaEnviar
+            costo = dataJson[0]['costo'];
+            tiempo = dataJson[0]['tiempo'];
         },
         error : function(jqXHR, status, error) {
             alert('Disculpe, existió un problema');
@@ -95,19 +105,68 @@ const opcionCambiada = ()=>{
     console.log("cambio");
     //console.log(servicios.value);
     var $servicioSelec = servicios.value;
+    servicio2 = $servicioSelec;//pruebaEnviar
     showCost($servicioSelec);
-    showTime();
 }
 
 servicios.addEventListener("change", opcionCambiada);
 
 
-
-
-
-
-
 //seccion calendario
+var calendario  = document.querySelector(".calenda");
+calendario.addEventListener("click", mostrarCalendario);
+function mostrarCalendario(){
+    const simplepicker = new SimplePicker();
+    simplepicker.open()
+    simplepicker.on('submit', function(date, readableDate){
+        //console.log(date);
+        console.log(typeof(date));
+        console.log(date);
+        fecha = readableDate;//pruebaEnviar
+        console.log(readableDate);
+        console.log(servicio2);
+        console.log(costo);
+        console.log(tiempo);
+        console.log(fecha);
+        //prueba guardar citas en bd
+        
+    });
+}
+
+var botonAgendar  = document.querySelector(".reservar");
+botonAgendar.addEventListener("click", agendarCita);
+function agendarCita(){
+    console.log("entrando agendar Cita");
+    $.ajax({
+        url:"bd/agendarCita.php",
+        data: {
+            servicio: servicio2,
+            costo: costo,
+            tiempo: tiempo,
+            fecha: fecha
+        },
+        type:"POST",
+        datatype: "json",
+        success: function(json){
+            console.log(json);
+                // console.log(password);
+                if(json.match('null')){
+                    Swal.fire({
+                        type:'error',
+                        title:'Algo salio mal, intente nuevamente',
+                    });
+                }
+        },
+        error : function(jqXHR, status, error) {
+            alert('Disculpe, existió un problema');
+        },
+    });
+}
+
+
+
+  //mostrarCalendario();
+
 // mobiscroll.setOptions({
 //     locale: mobiscroll.localeEs,
 //     theme: 'ios',
