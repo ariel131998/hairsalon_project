@@ -12,7 +12,7 @@ $tiempo = (isset($_POST['tiempo'])) ? $_POST['tiempo'] : '';
 $fecha = (isset($_POST['fecha'])) ? $_POST['fecha'] : '';
 $usuario = $_SESSION["s_usuario"];
 
-$consulta = " INSERT INTO pedidos (usuario, servicio, costo, tiempo, cita) VALUES ('$usuario', '$servicio', '$costo', '$tiempo', '$tiempo')";
+$consulta = " INSERT INTO pedidos (usuario, servicio, costo, tiempo, cita) VALUES ('$usuario', '$servicio', '$costo', '$tiempo', '$fecha')";
 $resultado = $connection->prepare($consulta);
 $resultado->execute(); #ejecutamos la consulta
 

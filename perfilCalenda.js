@@ -120,14 +120,21 @@ function mostrarCalendario(){
     simplepicker.open()
     simplepicker.on('submit', function(date, readableDate){
         //console.log(date);
-        console.log(typeof(date));
+        //console.log(typeof(date));
         console.log(date);
-        fecha = readableDate;//pruebaEnviar
-        console.log(readableDate);
-        console.log(servicio2);
-        console.log(costo);
-        console.log(tiempo);
-        console.log(fecha);
+        
+        //console.log("holaa: "+date.toLocaleDate());
+        //console.log(date-date.getTimezoneOffset())
+        //var temp = (date-date.getTimezoneOffset()).toISOString();
+        //console.log("temp"+temp);
+        //console.log(date-date.getTimezoneOffset())
+        //console.log("holaa: "+(date-(date.getTimezoneOffset()*60*100)).toISOString().slice(0, 19).replace('T', ' '));
+        fecha = date.toISOString().slice(0, 19).replace('T', ' ');//pruebaEnviar
+        //console.log(readableDate);
+        //console.log(servicio2);
+        // console.log(costo);
+        // console.log(tiempo);
+        // console.log(fecha);
         //prueba guardar citas en bd
         
     });
