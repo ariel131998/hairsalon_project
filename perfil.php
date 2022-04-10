@@ -117,9 +117,12 @@ if($varsession === null || $varsession  == ''){
                     <!-- <div id="demo-inline"></div> -->
                     <div id="demo-booking-multiple"></div>
                     <label>
-                        Selecciona el dia y horario
+                        Selecciona el dia y horario: 
+                        <br>
                         <button  class="calenda" id="calenda"/>Elegir Fecha </button>
                     </label>
+                    <br>
+                    <span class="citaHora"></span>
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5 reservar" type="submit">Reservar</button>
 

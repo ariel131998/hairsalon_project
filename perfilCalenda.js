@@ -114,29 +114,30 @@ servicios.addEventListener("change", opcionCambiada);
 
 //seccion calendario
 var calendario  = document.querySelector(".calenda");
+var horaFecha = document.querySelector(".citaHora");
 calendario.addEventListener("click", mostrarCalendario);
 function mostrarCalendario(){
     const simplepicker = new SimplePicker();
     simplepicker.open()
     simplepicker.on('submit', function(date, readableDate){
-        //console.log(date);
+        
         //console.log(typeof(date));
         console.log(date);
-        
+        var temporal = (31 * 60) * 60000;//7
+        //console.log(temporal);
         //console.log("holaa: "+date.toLocaleDate());
         //console.log(date-date.getTimezoneOffset())
         //var temp = (date-date.getTimezoneOffset()).toISOString();
         //console.log("temp"+temp);
         //console.log(date-date.getTimezoneOffset())
         //console.log("holaa: "+(date-(date.getTimezoneOffset()*60*100)).toISOString().slice(0, 19).replace('T', ' '));
-        fecha = date.toISOString().slice(0, 19).replace('T', ' ');//pruebaEnviar
-        //console.log(readableDate);
-        //console.log(servicio2);
-        // console.log(costo);
-        // console.log(tiempo);
-        // console.log(fecha);
-        //prueba guardar citas en bd
+        //fecha = date.toISOString().slice(0, 19).replace('T', ' ');//pruebaEnviar
         
+        //console.log(fecha);
+        var horaResta = new Date( date-temporal);
+        console.log("probano:"+horaResta.toISOString());
+        fecha = horaResta.toISOString().slice(0, 19).replace('T', ' ');
+        horaFecha.innerHTML = fecha;
     });
 }
 
