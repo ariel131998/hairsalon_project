@@ -16,11 +16,17 @@ $consulta = " INSERT INTO pedidos (usuario, servicio, costo, tiempo, cita) VALUE
 $resultado = $connection->prepare($consulta);
 $resultado->execute(); #ejecutamos la consulta
 
-if($resultado->rowCount() >= 1){
+// $consulta2 = "SELECT * FROM pedidos WHERE cita in ('$fecha') ";
+// $resultado2 = $connection->prepare($consulta2);
+// $resultado2 -> execute();
+
+// console.log($resultado2); //&& $resultado2->rowCount() <=0
+
+if($resultado->rowCount() >= 1 ){
 	#FETCH_ASSOC devuelve siguiente fila como array indexado 
     $data = "success: true"; #fetchall devuelve array todas las filas del conjunto  
 }else{
-    $data=null;
+    $data=null;//aqui modificar para regresar que ya esta ocupado
 }
 
 print json_encode($data); #enviamos el array final a ajax

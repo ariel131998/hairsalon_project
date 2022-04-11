@@ -123,7 +123,7 @@ function mostrarCalendario(){
         
         //console.log(typeof(date));
         console.log(date);
-        var temporal = (31 * 60) * 60000;//7
+        var temporal = (5 * 60) * 60000;//7
         //console.log(temporal);
         //console.log("holaa: "+date.toLocaleDate());
         //console.log(date-date.getTimezoneOffset())
@@ -145,6 +145,9 @@ var botonAgendar  = document.querySelector(".reservar");
 botonAgendar.addEventListener("click", agendarCita);
 function agendarCita(){
     console.log("entrando agendar Cita");
+    //primero verificar que se pueda en esa hora 
+
+    //luego agregar una bandera para meter todo lo que sigue en un if.
     $.ajax({
         url:"bd/agendarCita.php",
         data: {
@@ -153,7 +156,7 @@ function agendarCita(){
             tiempo: tiempo,
             fecha: fecha
         },
-        type:"POST",
+        type:"POST",//checar en archivo php que haya lugar.
         datatype: "json",
         success: function(json){
             console.log(json);
@@ -164,6 +167,22 @@ function agendarCita(){
                         title:'Algo salio mal, intente nuevamente',
                     });
                 }
+                else{
+                    Swal.fire({
+                        title: 'Su cita ha sido reservada exitosamente',
+                        //showDenyButton: true,//falta modificar, dependiendo lo que regrese el php 
+                        showCancelButton: true,
+                        confirmButtonText: 'ok',
+                        //denyButtonText: `Don't save`,
+                    }).then((result)=>{
+                        if (result.isConfirmed){
+                            Swal.fire('Agendado','', 'success')
+                        }
+                        else if(result.isDenied){
+                            Swal.fire('Cita no agendada','','info')
+                        }
+                    })
+                }
         },
         error : function(jqXHR, status, error) {
             alert('Disculpe, existió un problema');
@@ -173,38 +192,6 @@ function agendarCita(){
 
 
 
-  //mostrarCalendario();
 
-// mobiscroll.setOptions({
-//     locale: mobiscroll.localeEs,
-//     theme: 'ios',
-//     themeVariant: 'light'
-// });
-
-// mobiscroll.datepicker('#demo-booking-multiple', {
-//     controls: ['calendar', 'timegrid'],
-//     display: 'center',
-//     min: '2022-02-28T00:00',
-//     max: '2022-08-28T00:00',
-//     minTime: '08:00',
-//     maxTime: '19:59',
-//     stepMinute: 60,
-//     // example for today's labels and invalids
-//     labels: [{
-//         start: '2022-02-27',
-//         textColor: '#e1528f',
-//         title: '3 SPOTS'
-//     }],
-//     invalid: [{
-//         start: '2022-02-28T08:00',
-//         end: '2022-02-28T13:00'
-//     }, {
-//         start: '2022-02-28T15:00',
-//         end: '2022-02-28T17:00'
-//     }, {
-//         start: '2022-02-28T19:00',
-//         end: '2022-02-28T20:00'
-//     }]
-// });
 
 
