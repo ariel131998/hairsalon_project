@@ -168,20 +168,31 @@ function agendarCita(){
                     });
                 }
                 else{
-                    Swal.fire({
-                        title: 'Su cita ha sido reservada exitosamente',
-                        //showDenyButton: true,//falta modificar, dependiendo lo que regrese el php 
-                        showCancelButton: true,
-                        confirmButtonText: 'ok',
-                        //denyButtonText: `Don't save`,
-                    }).then((result)=>{
-                        if (result.isConfirmed){
-                            Swal.fire('Agendado','', 'success')
-                        }
-                        else if(result.isDenied){
-                            Swal.fire('Cita no agendada','','info')
-                        }
-                    })
+                    if(json.match('mas')){
+                        //console.log('ya hay agendado ese dia');
+                        Swal.fire({
+                            type:'error',
+                            title:'Lo sentimos, ya hay agendado ese dia',
+                        });
+                    }
+                    else{
+
+                        Swal.fire({
+                            title: 'Su cita ha sido reservada exitosamente',
+                            //showDenyButton: true,//falta modificar, dependiendo lo que regrese el php 
+                            showCancelButton: true,
+                            confirmButtonText: 'ok',
+                            //denyButtonText: `Don't save`,
+                        }).then((result)=>{
+                            if (result.isConfirmed){
+                                Swal.fire('Agendado','', 'success')
+                            }
+                            else if(result.isDenied){
+                                //ver forma de no agendar cita cuando se le de en cancelar
+                                Swal.fire('Cita no agendada','','info')
+                            }
+                        })
+                    }
                 }
         },
         error : function(jqXHR, status, error) {
