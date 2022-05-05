@@ -34,7 +34,12 @@ function login(){
                             /*captura el resultado*/
                         })//se obtuvo un login exitoso
                         .then((result)=>{
-                            window.location.href = 'perfil.php'
+                            if(data.match('admin')){
+                                window.location.href = 'admin.php';    
+                            }
+                            else{
+                                window.location.href = 'perfil.php'
+                            }
                         })
                     }
                     

@@ -17,7 +17,12 @@ $resultado->execute(); #ejecutamos la consulta
 
 if($resultado->rowCount() >= 1){
 	#FETCH_ASSOC devuelve siguiente fila como array indexado 
-    $data = $resultado->fetchAll(PDO::FETCH_ASSOC); #fetchall devuelve array todas las filas del conjunto  
+    if($user == 'admin'){
+        $data = $data = "success: admin"; 
+    }
+    else{
+        $data = $resultado->fetchAll(PDO::FETCH_ASSOC); #fetchall devuelve array todas las filas del conjunto  
+    }
     $_SESSION["s_usuario"] = $user;//llenamos variable con el usuario encontrado y que mando datos correctamente
 }else{
     $_SESSION["s_usuario"] = null; //lo mandaremos vacio ya que no se encontro ningun usuario match de session. 
