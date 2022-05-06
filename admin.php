@@ -82,28 +82,39 @@ if($varsession === null || $varsession  == ''){
     </nav>
     <section class="prueba">
         <div class="container">
-            <h1>Panel de Reservaciones</h1>
+            <h1>Panel de Adminintrador</h1>
             <h2>Bienvenido: <?php echo $_SESSION["s_usuario"]?></h2>
             <!-- <a href="php-login/logout.php">Cerrar sesion</a> -->
         </div>
     </section>
 
     <section>
-        <h1>Bienvenido</h1>
+        <div class="dropdown p-3 ">
+        <button class="btn btn-secondary btn-lg dropdown-toggle align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item serviceAdd" id="option1" href="#">Agregar servicio</a></li>
+            <li><a class="dropdown-item" id='option4' href="#">Eliminar servicio</a></li>
+            <li><a class="dropdown-item" id='option2' href="#">Eliminar usurio</a></li>
+            <li><a class="dropdown-item" id='option3' href="#">Cambiar contrasena</a></li>
+        </ul>
+    </div>
+    <div class="p-5" id="accionesAdmin">
+
+    </div>
     </section>
 
     <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                SCRIPTS SECTION 
 /////////////////////////////////////////////////////////////////////////////////////////////-->
     
-<script src="perfilCalenda.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous">
     </script>
     <!-- <script src="db_connection.js"></script> -->
-    <script src="node_modules\sweetalert2\dist\sweetalert2.all.min.js"></script>
-    
+<script src="adminScript.js"></script>
     
 </body>
 </html>
