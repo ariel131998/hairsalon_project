@@ -43,11 +43,14 @@ function cambiarContrasena(){
     if(serviceShow.hasChildNodes == true){
         accionesAdministrador.removeChild(serviceShow);
     }
-    serviceShow.innerHTML = '<label for="exampleInputEmail1" class="form-label" id="cambiarContra">Ingrese la nueva contrasena</label> <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> <button type="button" class="btn btn-primary mt-3" id="sendData">Enviar</button>';
+    serviceShow.innerHTML = '<label for="exampleInputEmail1" class="form-label" id="cambiarContra">Ingrese la nueva contrasena</label> <input type="text" class="form-control" id="newPasswordInput" aria-describedby="emailHelp"> <button type="button" class="btn btn-primary mt-3" id="sendData">Enviar</button>';
     accionesAdministrador.appendChild(serviceShow);
+
+    //llamar funcion
+    var buttonSendData = document.getElementById("sendData");
+    buttonSendData.addEventListener('click',cambiarCotraBd);
     
 }
-
 
 var eliminarUsurio = document.getElementById('option4');
 eliminarUsurio.addEventListener('click', eliminarServicio);
@@ -56,9 +59,13 @@ function eliminarServicio(){
     if(serviceShow.hasChildNodes == true){
         accionesAdministrador.removeChild(serviceShow);
     }
-    serviceShow.innerHTML = '<label for="exampleInputEmail1" class="form-label" id="eliminarServicio">Ingrese el servicio a elminar</label> <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> <button type="button" class="btn btn-primary mt-3" id="sendData">Enviar</button>';
+    serviceShow.innerHTML = '<label for="exampleInputEmail1" class="form-label" id="eliminarServicio">Ingrese el servicio a elminar</label> <input type="text" class="form-control" id="deleteServiceInput" aria-describedby="emailHelp"> <button type="button" class="btn btn-primary mt-3" id="sendData">Enviar</button>';
     accionesAdministrador.appendChild(serviceShow);
+    //llamar funcion
+    var buttonSendData = document.getElementById("sendData");
+    buttonSendData.addEventListener('click', eliminarServicioBd);
 }
+
 
 
 function checarVacio(serviceText, costText, timeText ){
@@ -171,7 +178,94 @@ function eliminarUsuarioBd(){
                     if(data!="null"){
                         Swal.fire({
                             icon:'success',
-                            title:'¡Registro exitoso!',
+                            title:'¡Usuario eliminado correctamente!',
+                            confirmButtonColor:'#F27979',
+                            confirmButtonText:'Ok'
+                            /*captura el resultado*/
+                        })//se obtuvo un login exitoso
+                        
+                            
+                            //window.location.href = 'perfil.php'//checar problema de el post 
+                        
+                    }
+                    
+                    //window.location.href = 'admin.php';
+                }
+            }
+        })
+    }
+}
+
+function eliminarServicioBd(){
+    var userDeleate = document.getElementById("deleteServiceInput");
+    var serviceDeleateText = userDeleate.value;
+    //mandar a bd
+    if(checarVacioDeleate(serviceDeleateText)){
+        //mandar datos
+        $.ajax({
+            url:"bd/adminDeleteService.php",
+            type:"POST",
+            datatype: "json",
+            data:{
+                serviceDeleate:serviceDeleateText
+            },
+            success:function(data){
+                console.log(data);
+                // console.log(password);
+                if(data.match('null')){
+                    Swal.fire({
+                        type:'error',
+                        title:'Algo salio mal, intente nuevamente',
+                    });
+                }
+                else{
+                    if(data!="null"){
+                        Swal.fire({
+                            icon:'success',
+                            title:'¡Servicio eliminado correctamente!',
+                            confirmButtonColor:'#F27979',
+                            confirmButtonText:'Ok'
+                            /*captura el resultado*/
+                        })//se obtuvo un login exitoso
+                        
+                            
+                            //window.location.href = 'perfil.php'//checar problema de el post 
+                        
+                    }
+                    
+                    //window.location.href = 'admin.php';
+                }
+            }
+        })
+    }
+}
+function cambiarCotraBd(){
+    var contra = document.getElementById("newPasswordInput");
+    var contraDeleateText = contra.value;
+    //mandar a bd
+    if(checarVacioDeleate(contraDeleateText)){
+        //mandar datos
+        $.ajax({
+            url:"bd/adminChangePassword.php",
+            type:"POST",
+            datatype: "json",
+            data:{
+                contraDeleateText:contraDeleateText
+            },
+            success:function(data){
+                console.log(data);
+                // console.log(password);
+                if(data.match('null')){
+                    Swal.fire({
+                        type:'error',
+                        title:'Algo salio mal, intente nuevamente',
+                    });
+                }
+                else{
+                    if(data!="null"){
+                        Swal.fire({
+                            icon:'success',
+                            title:'Contrasena cambiada correctamente!',
                             confirmButtonColor:'#F27979',
                             confirmButtonText:'Ok'
                             /*captura el resultado*/
