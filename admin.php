@@ -115,6 +115,7 @@ if($varsession === null || $varsession  == ''){
     </script>
     <!-- <script src="db_connection.js"></script> -->
 <script src="adminScript.js"></script>
+<script src="node_modules\sweetalert2\dist\sweetalert2.all.min.js"></script>
     
 </body>
 </html>
