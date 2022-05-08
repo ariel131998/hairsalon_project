@@ -282,3 +282,53 @@ function cambiarCotraBd(){
         })
     }
 }
+
+
+function showUsersBD(){
+    var f=0;
+    var count = 0;
+    //obtengo tabla
+    var tableContent = document.getElementById('contentUserTable');
+    //crear elemento a agregar a tabla, pero con un for 
+    //while(f==0){
+        $.ajax({
+            url:"bd/getAllUsersBd.php",
+            type:"GET",
+            datatype: "json",
+            // data:{
+            //     contraDeleateText:contraDeleateText
+            // },
+            success:function(data){
+                console.log(data);
+                // console.log(password);
+                if(data.match('null')){
+                    //terminamos el while
+                    f=1;
+                }
+                else{
+                    if(data!="null"){
+                        
+                            const usuariosJson = JSON.parse(data);
+                            usuariosJson.forEach(element=>{
+                                const fila = document.createElement('tr');
+                                //prueba
+                                console.log(element.usuario);
+                                fila.innerHTML = '<th scope="row">1</th><td>'+element.usuario+'</td><td>'+element.contrasena+'</td><td>'+element.Nombre+'</td>'+'</td><td>'+element.Apellido+'</td>'+'</td><td>'+element.correo+'</td>'+'</td><td>'+element.celular+'</td>';
+                                tableContent.appendChild(fila);
+                                //prueba
+                            });
+                        
+                    }
+                    
+                    //window.location.href = 'admin.php';
+                }
+            }
+        })
+    //}
+}
+
+function showServicesBD(){
+
+}
+
+showUsersBD();

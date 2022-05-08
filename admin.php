@@ -87,7 +87,9 @@ if($varsession === null || $varsession  == ''){
             <!-- <a href="php-login/logout.php">Cerrar sesion</a> -->
         </div>
     </section>
-
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 2 - Acciones administrador  
+/////////////////////////////////////////////////////////////////////////////////////////////-->
     <section>
         <div class="dropdown p-3 ">
         <button class="btn btn-secondary btn-lg dropdown-toggle align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,6 +106,65 @@ if($varsession === null || $varsession  == ''){
 
     </div>
     </section>
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 3 - Admin vea lo que hay en la base de datos
+/////////////////////////////////////////////////////////////////////////////////////////////-->
+    <section>
+        <div class="tableUsers m-5">
+            <h2>Usuarios registrados en Beauty Salon</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Contrasena</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Celular</th>
+                    </tr>
+                </thead>
+                <tbody id="contentUserTable">
+                    <!-- <div id="contentUserTable"> -->
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <!-- </div> -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tableServices m-5">
+            <h2>Usuarios con pedidos activos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Tiempo</th>
+                    <th scope="col">Cita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
 
     <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                SCRIPTS SECTION 
