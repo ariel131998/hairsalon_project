@@ -110,7 +110,7 @@ if($varsession === null || $varsession  == ''){
                         <option>Peinado Dama</option> -->
                     </select>
                 </div>
-                <div class="form-outline form-white mb-4 costTime">
+                <div class="form-outline form-white mb-4 costTime" id="divDisponibilidad">
                     <h3 id ="cost"></h3>
                     <h3 id ="time"></h3>
                 </div>

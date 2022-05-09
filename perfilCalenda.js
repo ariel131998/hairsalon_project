@@ -2,10 +2,22 @@
 var servicio2; //servicio
 //var usuario; //recuperar de php.
 var fecha;
+var fechasinHora;
 var costo;
 var tiempo;
 //seccion obtener datos de tabla de servicios.
 var servicios = document.getElementById('servicio');
+
+var horaElegida = false;
+
+
+//var divFecha = document.createElement('span');
+var divDisponibilidad = document.getElementById('divDisponibilidad');
+//divDisponibilidad.innerHTML = '<div id="divFechas"></div>'
+var divFechas = document.createElement('div');
+divDisponibilidad.appendChild(divFechas);
+//var divFechas = document.getElementById('divFechas');
+//divDisponibilidad.appendChild(divFechas);
 
 function mostrarServicios(){
     
@@ -137,7 +149,17 @@ function mostrarCalendario(){
         var horaResta = new Date( date-temporal);
         console.log("probano:"+horaResta.toISOString());
         fecha = horaResta.toISOString().slice(0, 19).replace('T', ' ');
+        //en esta parte ya se selecciono una fecha
         horaFecha.innerHTML = fecha;
+        fechasinHora = fecha.slice(0,10);
+        console.log(fechasinHora);
+        if(divFechas.hasChildNodes == true){
+            console.log('entrando elimina nodo ');
+            //divDisponibilidad.removeChild(divFechas);
+        }
+        //aqui mostrar las fechas disponibles y de un color diferente si ya no hay espacio
+        checarDisponibilidadAgenda();
+        
     });
 }
 
@@ -202,7 +224,67 @@ function agendarCita(){
 }
 
 
+function checarDisponibilidadAgenda(){
+    let fechasOcupadas = [];
+    let duracionFechasOcupadas = [];
+    
+    var title = document.createElement('h4');
+    var divFechas2 = document.createElement('div');
+    console.log('llmando chera dispon');
+        console.log(divFechas.hasChildNodes());
+        // if(divFechas.hasChildNodes() == true){
+        //     console.log('entrandoo');
+        //     // divDisponibilidad.removeChild(divFechas);
+        //     divFechas.innerHTML = "";
+        //     divDisponibilidad.re
+        // }
 
+    title.innerHTML = 'horas ocupadas';
+    divFechas2.appendChild(title);
+    $.ajax({
+        url:"bd/disponibilidadAgendaBackEnd.php",
+        type:"GET",
+        datatype: "json",
+        data:{
+            cita:fechasinHora
+        },
+        success:function(data){
+            console.log(data);
+            // console.log(password);
+            if(data.match('null')){
+                //terminamos el while
+                f=1;
+            }
+            else{
+                if(data!="null"){
+                    
+                        const usuariosJson = JSON.parse(data);
+                        usuariosJson.forEach(element=>{
+
+                            if(element.cita.includes(fechasinHora) == true){
+                                console.log(element.cita);
+                                console.log(element.tiempo);
+                                //fechasOcupadas.push(element.cita);
+                                //duracionFechasOcupadas.push(element.tiempo);
+                                var divFecha = document.createElement('span');
+                                divFecha.innerHTML =  element.cita+ '->' + element.tiempo+ 'h' + '<br>';
+                                divFechas2.appendChild(divFecha);
+                            }
+
+                        });
+                    
+                }
+                
+                //window.location.href = 'admin.php';
+            }
+        }
+    })
+    divDisponibilidad.replaceChild(divFechas2, divFechas);
+    divFechas = divFechas2;
+    // for(let i = 0; i<10; i++){
+
+    // }
+}
 
 
 
