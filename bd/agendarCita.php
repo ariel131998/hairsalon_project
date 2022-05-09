@@ -36,6 +36,7 @@ if($resultado->rowCount() >= 1 ){
 
         if($resultado->rowCount() >= 1 ){
             #FETCH_ASSOC devuelve siguiente fila como array indexado 
+            $_SESSION["s_pago"] = $_SESSION["s_pago"] + $costo;
             $data = "success: true"; #fetchall devuelve array todas las filas del conjunto  
         }else{
                 $data=null;//aqui modificar para regresar que ya esta ocupado

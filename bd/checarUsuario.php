@@ -24,6 +24,7 @@ if($resultado->rowCount() >= 1){
         $data = $resultado->fetchAll(PDO::FETCH_ASSOC); #fetchall devuelve array todas las filas del conjunto  
     }
     $_SESSION["s_usuario"] = $user;//llenamos variable con el usuario encontrado y que mando datos correctamente
+    $_SESSION["s_pago"] = 0;
 }else{
     $_SESSION["s_usuario"] = null; //lo mandaremos vacio ya que no se encontro ningun usuario match de session. 
     $data=null;

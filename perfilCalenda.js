@@ -47,10 +47,10 @@ function mostrarServicios(){
                 else{
                     if(data!="null"){
                         Swal.fire({
-                            icon:'success',
-                            title:'¡Conexión exitosa!',
+                            //icon:'success',
+                            title:'¡Seleccione el servicio a agendar!',
                             confirmButtonColor:'#F27979',
-                            confirmButtonText:'Ingresar'
+                            confirmButtonText:'Ok'
                             /*captura el resultado*/
                         })//se obtuvo un login exitoso
                         .then((result)=>{
@@ -208,6 +208,10 @@ function agendarCita(){
                         }).then((result)=>{
                             if (result.isConfirmed){
                                 Swal.fire('Agendado','', 'success')
+                                setTimeout(function(){
+                                    console.log("I am the third log after 5 seconds");
+                                },7000);
+                                window.location.href = 'perfil.php'
                             }
                             else if(result.isDenied){
                                 //ver forma de no agendar cita cuando se le de en cancelar
@@ -284,6 +288,47 @@ function checarDisponibilidadAgenda(){
     // for(let i = 0; i<10; i++){
 
     // }
+}
+
+
+
+//Funcion para realizar el pago de los servicios
+var botonPago = document.getElementById('mostraPago');
+botonPago.addEventListener('click',mostrarPago);
+function mostrarPago(){
+    $.ajax({
+        url:"bd/costoTotalBackEnd.php",
+        type:"POST",
+        datatype: "json",
+        // data:{
+        //     cita:fechasinHora
+        // },
+        success:function(data){
+            console.log(data);
+            // console.log(password);
+            if(data.match('null')){
+                //terminamos el while
+                f=1;
+            }
+            else{
+                if(data!="null"){
+                    Swal.fire({
+                        icon:'success',
+                        title:'¡Pago realizado!',
+                        confirmButtonColor:'#F27979',
+                        confirmButtonText:'Ok'
+                        /*captura el resultado*/
+                    })//s
+                    setTimeout(function(){
+                        console.log("I am the third log after 5 seconds");
+                    },7000);
+                    window.location.href = 'perfil.php'
+                }
+                
+                //window.location.href = 'admin.php';
+            }
+        }
+    })
 }
 
 
