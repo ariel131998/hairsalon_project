@@ -31,7 +31,7 @@ if($varsession === null || $varsession  == ''){
     <!-- tipografia a utilizar -->
     <!-- script -->
 </head>
-<body class= "gradient-custom">
+<body>
         <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                START SECTION 1 - THE NAVBAR SECTION  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -126,12 +126,12 @@ if($varsession === null || $varsession  == ''){
                 </thead>
                 <tbody id="contentUserTable">
                     <!-- <div id="contentUserTable"> -->
-                    <tr>
+                    <!-- <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                    </tr>
+                    </tr> -->
                     <!-- </div> -->
                 </tbody>
             </table>
@@ -150,13 +150,13 @@ if($varsession === null || $varsession  == ''){
                     <th scope="col">Cita</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="contentUserTable2">
+                    <!-- <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                    </tr>
+                    </tr> -->
                     
                 </tbody>
             </table>
