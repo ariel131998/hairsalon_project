@@ -15,7 +15,9 @@ var horaElegida = false;
 var divDisponibilidad = document.getElementById('divDisponibilidad');
 //divDisponibilidad.innerHTML = '<div id="divFechas"></div>'
 var divFechas = document.createElement('div');
+var divAvailable = document.createElement('div');
 divDisponibilidad.appendChild(divFechas);
+divDisponibilidad.appendChild(divAvailable);
 //var divFechas = document.getElementById('divFechas');
 //divDisponibilidad.appendChild(divFechas);
 
@@ -91,7 +93,7 @@ function showCost($servicioSelec){
     var temp2  = document.getElementById('time');
     //cambiar por consulta en bd
     //var servicioTemp = $servicioSelec;
-    console.log($servicioSelec);
+    //console.log($servicioSelec);
     //consulta bd por precio
     $.ajax({
         url:"bd/obtenerPrecio.php",
@@ -114,7 +116,7 @@ function showCost($servicioSelec){
 }
 
 const opcionCambiada = ()=>{
-    console.log("cambio");
+    //console.log("cambio");
     //console.log(servicios.value);
     var $servicioSelec = servicios.value;
     servicio2 = $servicioSelec;//pruebaEnviar
@@ -134,7 +136,7 @@ function mostrarCalendario(){
     simplepicker.on('submit', function(date, readableDate){
         
         //console.log(typeof(date));
-        console.log(date);
+        //console.log(date);
         var temporal = (5 * 60) * 60000;//7
         //console.log(temporal);
         //console.log("holaa: "+date.toLocaleDate());
@@ -147,12 +149,12 @@ function mostrarCalendario(){
         
         //console.log(fecha);
         var horaResta = new Date( date-temporal);
-        console.log("probano:"+horaResta.toISOString());
+        //console.log("probano:"+horaResta.toISOString());
         fecha = horaResta.toISOString().slice(0, 19).replace('T', ' ');
         //en esta parte ya se selecciono una fecha
         horaFecha.innerHTML = fecha;
         fechasinHora = fecha.slice(0,10);
-        console.log(fechasinHora);
+        //console.log(fechasinHora);
         if(divFechas.hasChildNodes == true){
             console.log('entrando elimina nodo ');
             //divDisponibilidad.removeChild(divFechas);
@@ -229,13 +231,14 @@ function agendarCita(){
 
 
 function checarDisponibilidadAgenda(){
-    let fechasOcupadas = [];
-    let duracionFechasOcupadas = [];
-    
+    var fechasOcupadas = [];
+    var duracionFechasOcupadas = [];
     var title = document.createElement('h4');
+    var titleAvailable = document.createElement('h4');
     var divFechas2 = document.createElement('div');
-    console.log('llmando chera dispon');
-        console.log(divFechas.hasChildNodes());
+    var divAvailable2 = document.createElement('div');
+    //console.log('llmando chera dispon');
+        //console.log(divFechas.hasChildNodes());
         // if(divFechas.hasChildNodes() == true){
         //     console.log('entrandoo');
         //     // divDisponibilidad.removeChild(divFechas);
@@ -243,7 +246,7 @@ function checarDisponibilidadAgenda(){
         //     divDisponibilidad.re
         // }
 
-    title.innerHTML = 'horas ocupadas';
+    title.innerHTML = '<b class="text-danger">horas ocupadas</b>';
     divFechas2.appendChild(title);
     $.ajax({
         url:"bd/disponibilidadAgendaBackEnd.php",
@@ -253,7 +256,7 @@ function checarDisponibilidadAgenda(){
             cita:fechasinHora
         },
         success:function(data){
-            console.log(data);
+            //console.log(data);
             // console.log(password);
             if(data.match('null')){
                 //terminamos el while
@@ -266,28 +269,86 @@ function checarDisponibilidadAgenda(){
                         usuariosJson.forEach(element=>{
 
                             if(element.cita.includes(fechasinHora) == true){
+                                
+                                console.log('entrandoooooooooo');
                                 console.log(element.cita);
                                 console.log(element.tiempo);
-                                //fechasOcupadas.push(element.cita);
-                                //duracionFechasOcupadas.push(element.tiempo);
+                                fechasOcupadas.push(element.cita);
+                                duracionFechasOcupadas.push(element.tiempo);
                                 var divFecha = document.createElement('span');
                                 divFecha.innerHTML =  element.cita+ '->' + element.tiempo+ 'h' + '<br>';
                                 divFechas2.appendChild(divFecha);
                             }
 
                         });
+
+                        //moviendo aqui
+                        divDisponibilidad.replaceChild(divFechas2, divFechas);
+                        divFechas = divFechas2;
+                        console.log(fechasOcupadas);
+                        console.log(duracionFechasOcupadas);
+
+                        //modificaciones extra
+                        titleAvailable.innerHTML = '<b class="text-success">horas disponibles</b>';
+                        divAvailable2.appendChild(titleAvailable);
+                        //var temp = fechasOcupadas[1];
+                        // console.log(fechasOcupadas.length);
+                        // var dateDisponible = new Date(fecha);
+                        //dateDisponible.setHours(9,0); //colocamos la hora a las 9 para iniciar a comparar
+                        console.log(dateDisponible);
+                        var flag = 0;
+                        var duracionActual = 0;
+                        for(let i = 9; i<19; i++){
+                            //comparar solo horas que desde las 9 a las que estan en la bd
+                            //if(dateDisponible.getHours() != fechasOcupadas[i]){
+                            var dateDisponible = new Date(fecha);
+                            dateDisponible.setHours(i,0);
+                            dateDisponible = dateDisponible.toString().slice(15, 21);
+                            //console.log(dateDisponible.getHours());
+                            fechasOcupadas.forEach(element=>{
+                                //console.log('element:'+element);
+                                console.log('hora uno:'+element.slice(10,16) + ' hora dos:' + dateDisponible);
+                                //console.log(dateDisponible.toDateString().slice(10,16));
+                                var temp = element.slice(10,16);
+                                if(temp.localeCompare(dateDisponible)== 0){//element.slice(10,17) == dateDisponible
+                                    console.log('hora ocupada');
+                                    flag = 1;
+                                    duracionActual = duracionFechasOcupadas.pop();
+                                    console.log('duacion de:'+ duracionActual);
+                                }
+                                else{
+                                    
+                                    //flag = 1;
+                                    // var divFecha = document.createElement('span');
+                                    // divFecha.innerHTML =   dateDisponible+ 'h' + '<br>';
+                                    // divAvailable2.appendChild(divFecha);
+                                    console.log('hora disponible');
+                                }        
+                            });
+                            if(duracionActual >= 1){
+                                flag = 1;
+                                duracionActual--;
+                                console.log('servicio no completado aun');
+                            }
+                            if(flag == 0){
+                                var divFecha = document.createElement('span');
+                                divFecha.innerHTML =   dateDisponible+ 'h' + ', ';
+                                divAvailable2.appendChild(divFecha);
+                                console.log('hora disponible');
+                                divDisponibilidad.replaceChild(divAvailable2, divAvailable);
+                                divAvailable = divAvailable2; 
+                            }
+                            flag = 0;   
+                            //}
+                        }
                     
                 }
                 
                 //window.location.href = 'admin.php';
             }
         }
-    })
-    divDisponibilidad.replaceChild(divFechas2, divFechas);
-    divFechas = divFechas2;
-    // for(let i = 0; i<10; i++){
-
-    // }
+    });
+    
 }
 
 

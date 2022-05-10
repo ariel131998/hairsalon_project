@@ -150,7 +150,7 @@ if($varsession === null || $varsession  == ''){
         </svg>
     </div>
     <div class="Pago bg-white m-3 p-3">
-        <h3>Pago</h3>
+        <h3>Costo total de los servicios agendados</h3>
         <h2>Pago: $<?php echo $_SESSION["s_pago"]?></h2>
         <button class="btn btn-primary m-3 p-3" type="submit" id="mostraPago">Realizar Pago</button>
     </div>
