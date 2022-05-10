@@ -154,8 +154,18 @@ if($varsession === null || $varsession  == ''){
         <h2>Pago: $<?php echo $_SESSION["s_pago"]?></h2>
         <button class="btn btn-primary m-3 p-3" type="submit" id="mostraPago">Realizar Pago</button>
     </div>
-
+    <!-- seccion para habilitar una promocion -->
+    <div id="promocion">
+        <button class="btn btn-secondary m-3 p-3 text-white" type="submit" id="buttonPromo">Checar promocion</button>
+    </div>
 </section>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               Promociones SECTION 
+/////////////////////////////////////////////////////////////////////////////////////////////-->  
+
+
+
+
 <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                Footer SECTION 
 /////////////////////////////////////////////////////////////////////////////////////////////-->    

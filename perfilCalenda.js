@@ -392,5 +392,42 @@ function mostrarPago(){
     })
 }
 
-
-
+var botonPromo = document.getElementById('buttonPromo');
+botonPromo.addEventListener('click',checarPromocion);
+function checarPromocion(){
+    $.ajax({
+        url:"bd/checarPromo.php",
+        type:"GET",
+        datatype: "json",
+        // data:{
+        //     cita:fechasinHora
+        // },
+        success:function(data){
+            console.log(data);
+            // console.log(password);
+            if(data.match('null')){
+                //terminamos el while
+                f=1;
+            }
+            else{
+                if(data!="null"){
+                    //const usuariosJson = JSON.parse(data);
+                    console.log(data.fecha_registro);
+                    Swal.fire({
+                        icon:'success',
+                        title:'¡Promocion aplicada!',
+                        confirmButtonColor:'#F27979',
+                        confirmButtonText:'Ok'
+                        /*captura el resultado*/
+                    })//s
+                    // setTimeout(function(){
+                    //     console.log("I am the third log after 5 seconds");
+                    // },7000);
+                    // window.location.href = 'perfil.php'
+                }
+                
+                //window.location.href = 'admin.php';
+            }
+        }
+    })
+}
